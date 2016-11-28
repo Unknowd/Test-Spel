@@ -34,8 +34,13 @@ class Entity:
         self.y = y
         self.shape = shape
 
+    def move(self, x, y):
+        self.x += x
+        self.y -= y
+    
     def __repr__(self):
         return self.shape
+    
 class Game:
     def __init__(self, file):
         self.levels = []
