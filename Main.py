@@ -22,17 +22,23 @@ class Level:
         return s
     
 class Tile:
-    def __init__(self, shape):
+    def __init__(self, shape, passable):
         self.shape = shape
+        self.passable = passable
 
+    def canMoveThrough(self, entity):
+        return passable
+    
     def __repr__(self):
         return self.shape
 
 class Entity:
-    def __init__(self, x, y, shape):
+    def __init__(self, x, y, shape, canSwim, canFly):
         self.x = x
         self.y = y
         self.shape = shape
+        self.canSwim = canSwim
+        self.canFly = canFly
 
     def move(self, x, y):
         self.x += x
@@ -40,20 +46,29 @@ class Entity:
     
     def __repr__(self):
         return self.shape
+
+class Enemy(Entity):
+    pass
+
+class Player(Entity):
+    pass
+    
     
 class Game:
     def __init__(self, file):
-        self.levels = []
-        with open(file, 'r') as f:
-            current = Level()
-            for i in f:
-                if i == '\n':
-                    self.levels.append(current)
-                    current = Level()
-                    continue
-                current.addLine(i)
-            self.levels.append(current)
-        print(self.levels[0])
+        self.importLevels(file)
 
+    def importLevels(self, file):
+        self.levels = []
+            with open(file, 'r') as f:
+                current = Level()
+                for i in f:
+                    if i == '\n':
+                        self.levels.append(current)
+                        current = Level()
+                        continue
+                    current.addLine(i)
+                self.levels.append(current)
+                
 game = Game('Test-Level.txt')
                 
