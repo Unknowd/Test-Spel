@@ -19,7 +19,6 @@ class Level:
         for i in self.level:
             for j in i:
                 s += str(j)
-            s += '\n'
         return s
     
 class Tile:
@@ -48,6 +47,8 @@ class Game:
                     current = Level()
                     continue
                 current.addLine(i)
-                
+            self.levels.append(current)
         print(self.levels[0])
+
+game = Game('Test-Level.txt')
                 
