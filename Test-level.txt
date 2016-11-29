@@ -1,3 +1,9 @@
+[teken:-] [zwemmen:nee] [lopen:ja] [vliegen:ja] [zichtbaar:ja]
+[teken:@] [zwemmen:nee] [lopen:nee] [vliegen:ja] [zichtbaar:ja]
+[teken:?] [zwemmen:nee] [lopen:ja] [vliegen:ja] [zichtbaar:nee]
+[teken:~] [zwemmen:ja] [lopen:nee] [vliegen:ja] [zichtbaar:ja]
+
+[naam:Alles door elkaar]
 -----------??
 ------------?
 ---@@@@------
@@ -5,6 +11,6 @@
 ---@--???????
 ---@--?-??---
 ------????-~~
----?--???--~~
---??---------
+--~~--???--~~
+--~~---------
 -------------
