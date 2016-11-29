@@ -1,7 +1,7 @@
 class Level:
     def __init__(self):
         self.level = []
-
+        self.objects = []
     def addLine(self, line):
         self.level.append([Tile(i) for i in line])
         
@@ -10,7 +10,10 @@ class Level:
         for i in objecten:
             level[i.y][i.x] = i
         return level
-    
+
+    def addObject(self, *objects):
+        self.objects.extend(objects)
+        
     def isEmpty(self):
         return self.level
 
