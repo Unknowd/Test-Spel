@@ -2,8 +2,17 @@ class Level:
     def __init__(self):
         self.level = []
         self.objects = []
+        self.tiles = []
+        self.tilessoorten = {}
     def addLine(self, line):
-        self.level.append([Tile(i) for i in line])
+        uitvoer = []
+        for i in line[:len(line) - 1]:
+            uitvoer.append(self.tilessoorten[i])
+        if line.endswith('\n'):
+            uitvoer.append('\n')
+        else:
+            uitvoer.append(self.tilessoorten[line[-1]])
+        self.level.append(uitvoer)
         
     def getLevel(self, objecten):
         level = copy.deepcopy(self.level)
@@ -13,6 +22,10 @@ class Level:
 
     def addObject(self, *objects):
         self.objects.extend(objects)
+
+    def addTile(self, eigenschappen):
+        self.tiles.append(Tile(eigenschappen['teken'], eigenschappen['zwemmen'], eigenschappen['vliegen'], eigenschappen['lopen'], eigenschappen['zichtbaar']))
+        self.tilessoorten[eigenschappen['teken']] = self.tiles[-1]
         
     def isEmpty(self):
         return self.level
@@ -25,8 +38,12 @@ class Level:
         return s
     
 class Tile:
-    def __init__(self, shape):
+    def __init__(self, shape, canSwim, canFly, canWalk, visible):
         self.shape = shape
+        self.canSwim = canSwim
+        self.canFly = canFly
+        self.canWalk = canWalk
+        self.visible = visible
     
     def __repr__(self):
         return self.shape
