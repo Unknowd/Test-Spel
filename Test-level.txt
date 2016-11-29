@@ -1,8 +1,9 @@
-[teken:-] [zwemmen:nee] [lopen:ja] [vliegen:ja] [zichtbaar:ja]
-[teken:@] [zwemmen:nee] [lopen:nee] [vliegen:ja] [zichtbaar:ja]
-[teken:?] [zwemmen:nee] [lopen:ja] [vliegen:ja] [zichtbaar:nee]
-[teken:~] [zwemmen:ja] [lopen:nee] [vliegen:ja] [zichtbaar:ja]
+[teken:-] [zwemmen:0] [lopen:1] [vliegen:1] [zichtbaar:1]
+[teken:@] [zwemmen:0] [lopen:0] [vliegen:1] [zichtbaar:1]
+[teken:?] [zwemmen:0] [lopen:1] [vliegen:1] [zichtbaar:0]
+[teken:~] [zwemmen:1] [lopen:0] [vliegen:1] [zichtbaar:1]
 
+	Player P 2 2 1 0 0
 [naam:Alles door elkaar]
 -----------??
 ------------?
